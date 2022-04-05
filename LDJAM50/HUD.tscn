@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Hack-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://HUD.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 2 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+position = Vector2( 320, 360 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 16.0
+margin_right = 533.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 1 )
+text = "The Climber"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HowToPlay" type="Label" parent="."]
+margin_top = 64.0
+margin_right = 640.0
+margin_bottom = 717.0
+custom_fonts/font = SubResource( 2 )
+text = "Can you delay the inevitable?
+Perhaps escape your fate?
+
+You were exploring a cave when suddenly a huge surge of water started rising and it's flooding the cave!
+
+Can you escape?
+
+
+How to play:
+
+Left and Right arrow keys - move
+Up and Down arrow keys - climb
+Space - Jump/Drop
+Enter - START GAME!"
+align = 1
+valign = 1
+autowrap = true
